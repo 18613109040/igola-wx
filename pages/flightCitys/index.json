@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "城市选择",
+  "usingComponents": {
+    "component-tabs": "/components/tabs/index",
+    "component-list": "/components/list/index",
+    "component-icon": "/components/icon/index"
+  }
+}

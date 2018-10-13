@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/flightCitys/index",
+    "pages/searchCitys/index",
+    "pages/flightCalendar/index",
+    "pages/webView/index",
+    "components/divider/index",
+    "pages/timeLine/index",
+    "pages/cabinList/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "IGola",
+    "navigationBarTextStyle": "black"
+  }
+}

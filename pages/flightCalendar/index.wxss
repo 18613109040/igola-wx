@@ -1,0 +1,165 @@
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.nav-title{
+  height: 80rpx;
+  text-align: center;
+  
+}
+.date-picker-box {
+  width: 100%;
+  height: 120%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 24;
+}
+.color-p{
+  color: rgb(0, 190, 220);
+}
+.close-calendar{
+  position: absolute;
+  z-index: 100;
+  left: 20rpx;
+}
+.dpb-title {
+  height: 160rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  font-size: 30rpx;
+  position: relative;
+  color: rgb(70, 70, 70);
+  line-height: 50rpx;
+}
+.go{
+  flex: 1;
+  text-align: center;
+}
+.title{
+  color: rgb(70, 70, 70);
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.back{
+  flex: 1;
+  text-align: center;
+}
+.dpb-cancle {
+  position: absolute;
+  right: 24rpx;
+  line-height: 100rpx;
+  font-size: 26rpx;
+}
+
+.dpb-week {
+  background: #fff;
+  font-size: 13px;
+  width: 100%;
+  border-collapse: separate;
+  align-items: center;
+  display: flex;
+}
+
+.dpb-week-item {
+  height: 60rpx;
+  text-align: center;
+  font-weight: 400;
+  border-bottom: 1px solid #e0e0e0;
+  flex: 1;
+}
+
+.dpb-week-days {
+  position: relative;
+  width: 100%;
+  height: 75%;
+  overflow: auto;
+  padding-bottom: 120px;
+}
+
+.dpbwd-table-month {
+  height: 98rpx;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  font-size: 36rpx;
+  color: #333;
+  background: hsla(210, 8%, 95%, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  border-bottom: 1px solid #dce1e6;
+}
+
+.dpbwd-table-items-table {
+  width: 100%;
+  border-collapse: separate;
+  table-layout: fixed;
+}
+
+.page-week {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #ccc
+}
+
+.page-week-item {
+  flex: 1;
+  height: 120rpx;
+  padding-top: 15rpx;
+}
+
+.disable {
+  color: #ccc;
+  background: none;
+}
+
+.page-table-item {
+}
+
+.page-table-note {
+  font-size: 12px;
+  height: 15px;
+  line-height: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-style: inherit;
+  display: block;
+  width: 100%;
+  color: #00BEDC;
+  text-align: center;
+  font-weight: 400;
+}
+.activte .page-table-note{
+   color: #fff;
+}
+.page-table-text {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  font-size: 40rpx;
+}
+
+.activte {
+  background-color: rgb(0, 190, 220);
+  color: #fff;
+}
+.activte .color-p{
+ color: #fff;
+}
+.rang{
+  background-color: rgba(0, 190, 220, 0.2);
+}
+.price{
+  font-size: 24rpx;
+  text-align: center;
+}

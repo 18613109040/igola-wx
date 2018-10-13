@@ -1,0 +1,134 @@
+<view>
+  <view class='flight-section-card'>
+    <view class='detail'>
+      <view class='segment'>
+        <view class='stepper-line'></view>
+        <view class='segment-line'>
+          <view>
+            <text>22:20</text>
+          </view>
+          <view class='point'></view>
+          <view class='flight-name'>
+            <text>CAN 白云机场 T2</text>
+          </view>
+        </view>
+        <view class='segment-line'>
+          <view class='time'>
+            <text>1h20m</text>
+          </view>
+          <view class='flight-detail'>
+            <view>
+              <text>国际航空</text>
+              <text class='flight-number'>HU7808</text>
+            </view>
+            <view>
+              <text>*实际承运航司</text>
+              <text>港龙航空 </text>
+              <text class='flight-number'>PR7890</text>
+            </view>
+            <view>
+              <text>中型机 777 (4.5年) | 准点率80%</text>
+            </view>
+          </view>
+        </view>
+        <view class='segment-line'>
+          <view>
+            <text>23:20</text>
+          </view>
+          <view class='point'></view>
+          <view class='flight-name'>
+            <text>GTB 赤腊角机场 T2</text>
+          </view>
+        </view>
+      </view>
+      <view class='transfer'>
+        <view class='dotted-line'></view>
+        <view class='transfer-content'>
+           <view class='transfer-title'>
+            <text>中转 香港 停留9h50m</text>
+          </view>
+          <view class='transfer-des'>
+            <text>中转过夜 | 换票换乘 | 更换机场</text>
+          </view>
+        </view>
+      </view>
+      <view class='segment'>
+        <view class='stepper-line'></view>
+        <view class='segment-line'>
+          <view>
+            <text>22:20</text>
+          </view>
+          <view class='point'></view>
+          <view class='flight-name'>
+            <text>CAN 白云机场 T2</text>
+          </view>
+        </view>
+        <view class='segment-line'>
+          <view class='time'>
+            <text>1h20m</text>
+          </view>
+          <view class='flight-detail'>
+            <view>
+              <text>国际航空</text>
+              <text class='flight-number'>HU7808</text>
+            </view>
+            <view>
+              <text>*实际承运航司</text>
+              <text>港龙航空 </text>
+              <text class='flight-number'>PR7890</text>
+            </view>
+            <view>
+              <text>中型机 777 (4.5年) | 准点率80%</text>
+            </view>
+          </view>
+        </view>
+        <view class='segment-line'>
+          <view>
+            <text>23:20</text>
+          </view>
+          <view class='point'></view>
+          <view class='flight-name'>
+            <text>GTB 赤腊角机场 T2</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='flight-section-card'>
+    <view class='air-detail'> 
+      <view class='air-logo'>
+        <image src='https://content.igola.com/static/APP/images/airline_logo/2x/24x24/ak.png'></image>
+      </view>
+      <view class='air-price'>
+        <view class='price-line'>
+          <view class='cash-back'>
+            <text>返30</text>
+          </view>
+          <view class=''>
+            <text class='currency'>¥</text>
+            <text class='price'>3,084</text>
+          </view>
+        </view>
+        <view class='air-des'>
+          <text>经济舱，往返含税</text>
+        </view>
+      </view>
+    </view>
+    <view >
+      <text class='air-ranking'>国内第三的OTA</text>
+    </view>
+    <view class='air-footer'>
+      <view class='air-footer-left'>
+        <view>
+          <text>退改签规则</text>
+        </view>
+        <view class='icon-enter'>
+          <component-icon type='arrow' size='30'/>
+        </view>
+      </view>
+      <view class='btn'>
+        <button hover-class="other-button-hover" > 帮我买 </button>
+      </view>
+    </view>
+  </view>
+</view>

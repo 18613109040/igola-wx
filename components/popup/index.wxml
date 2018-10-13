@@ -1,0 +1,15 @@
+<component-mask
+  mask
+  show="{{ overlay && show }}"
+  z-index="{{ zIndex }}"
+  custom-style="{{ overlayStyle }}"
+  bind:maskclick="onClickOverlay"
+/>
+<view
+  wx:if="{{ inited }}"
+  class="custom-class popup {{ position ? 'popup-' + position : '' }}"
+  style="z-index: {{ zIndex }}; animation-name: {{ transition || position }}-{{ type }}; animation-duration: {{ duration }}ms; {{ display ? '' : 'display: none;' }}"
+  bind:animationend="onAnimationEnd"
+>
+  <slot />
+</view>

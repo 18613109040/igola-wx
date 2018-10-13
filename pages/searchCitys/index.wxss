@@ -1,0 +1,116 @@
+.city-line {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  /* padding: 20rpx; */
+  margin: 20rpx;
+  padding-bottom: 20rpx;
+  clear: both;
+}
+.search-citys .search-content{
+  position: relative;
+  margin-top: 100rpx;
+  z-index: 10;
+}
+.empty-content{
+  text-align: center;
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%);
+  color: #9B9B9B;
+  font-size: 32rpx;
+  line-height: 60rpx;
+}
+.empty-bg{
+  margin-top: 30%;
+}
+.search-citys .search input{
+  background: #fff;
+}
+.search-citys .empty-bg{
+  width: 200rpx;
+  height: 200rpx;
+}
+.search-citys .search{
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20rpx;
+  font-size: 40rpx;
+  margin: 0rpx 20rpx;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  top: 0px;
+  background: #fff;
+}
+.include {
+  position: relative;
+  display: inline-block;
+  width: 14px;
+  height: 12px;
+  border-left: 1px solid #a6a6a6;
+  border-bottom: 1px solid #a6a6a6;
+  overflow: hidden;
+  margin-left: 80rpx;
+}
+
+.include::after {
+  display: inline-block;
+  position: absolute;
+  border: 1px solid #a6a6a6;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+  right: 0;
+  bottom: 0;
+  content: '';
+}
+
+.city {
+  background: #00bedc;
+  color: #fff;
+  width: 60rpx;
+  text-align: center;
+  font-size: 24rpx;
+  border-radius: 5rpx;
+}
+
+.city-content {
+  margin-left: 20rpx;
+  flex: 1;
+}
+
+.city-name {
+  display: flex;
+  align-items: center;
+}
+
+.city-name .name {
+  color: #323232;
+  font-size: 38rpx;
+}
+
+.city-name .flight-name {
+  color: #464646;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.city-sub {
+  display: flex;
+  align-items: center;
+  color: #9b9b9b;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}
+
+.city-sub .line {
+  margin-top: 5rpx;
+}

@@ -1,0 +1,17 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+} 
+page {
+  color: #333;
+  background: rgba(240, 240, 240, 0.80);
+  /* min-height: 100vh; */
+  box-sizing: border-box;
+  /* padding: 0 0 100rpx; */
+  -webkit-font-smoothing: antialiased;
+  font-family: 'PingFang SC', Helvetica, 'STHeiti STXihei', 'Microsoft YaHei', Tohoma, Arial, sans-serif;
+}

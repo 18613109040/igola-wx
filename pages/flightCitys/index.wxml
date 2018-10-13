@@ -1,0 +1,47 @@
+<view class='flight-citys'>
+  <view class='city-header'>
+    <view class='search' bindtap='focus'>
+      {{type==='departure'?"从哪儿出发?":"想去哪里?"}}
+    </view>
+    <view >
+      <component-tabs tabs="{{flightCitys.tabs}}" active="{{selectIndex}}" bind:tabsclick="onTabsClick" />
+    </view>
+  </view>
+  <view class='container-city'>
+    <view class='history'>
+      <view class='title'>定位/历史</view>
+      <view class='history-city' wx:if="{{selectIndex==0}}">
+        <view class='position-city' bindtap='changeCity' data-item='{{myInfo.cityInfo}}'>
+          <component-icon type='position' color='rgb(0, 190, 220)' />
+          <text class='city-name'>{{myInfo.cityInfo.d}}</text>
+        </view>
+        <view class='city' wx:for="{{flightCitys.historyDomesticCitys}}" wx:key="{{index}}" bindtap='changeCity' data-item='{{item}}'>
+          <text class='city-name'>{{item.d}}</text>
+        </view>
+      </view>
+      <view class='history-city' wx:else>
+        <view class='position-city' bindtap='changeCity' data-item='{{myInfo.cityInfo}}'>
+          <component-icon type='position' color='rgb(0, 190, 220)' />
+          <text class='city-name'>{{myInfo.cityInfo.d}}</text>
+        </view>
+        <view class='city' wx:for="{{flightCitys.historyInternationalCitys}}" wx:key="{{index}}" bindtap='changeCity' data-item='{{item}}'>
+          <text class='city-name'>{{item.d}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='hot'>
+      <view class='title'>热门城市</view>
+      <view class='hot-citys' wx:if="{{selectIndex===0}}">
+        <view class='city' wx:for="{{domestic}}" wx:key="{{index}}" bindtap='changeCity' data-item='{{item}}'>
+          <text class='city-name'>{{item.d}}</text>
+        </view>
+      </view>
+      <view class='hot-citys' wx:else>
+        <view class='city' wx:for="{{international}}" wx:key="{{index}}" bindtap='changeCity' data-item='{{item}}'>
+          <text class='city-name'>{{item.d}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

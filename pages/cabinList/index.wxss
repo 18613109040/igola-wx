@@ -1,0 +1,204 @@
+.flight-section-card {
+  background: #fff;
+  box-shadow: 0 5rpx 10rpx 0 rgba(211, 210, 210, 0.50);
+  border-radius: 10rpx;
+  margin: 20rpx;
+  padding: 30rpx;
+}
+
+.segment {
+  position: relative;
+}
+
+.segment-line {
+  display: flex;
+  align-items: center;
+  font-family: HelveticaNeue;
+  font-size: 36rpx;
+  color: #323232;
+}
+
+.detail {
+  position: relative;
+}
+
+.stepper-line {
+  position: absolute;
+  height: calc(100% - 40rpx);
+  left: 110.2rpx;
+  width: 1rpx;
+  border: 1rpx solid #8cc8dc;
+  background-color: #8cc8dc;
+  top: 20rpx;
+}
+
+.point {
+  height: 15rpx;
+  width: 15rpx;
+  border-radius: 15rpx;
+  background-color: #8cc8dc;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+}
+
+.flight-name {
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #323232;
+}
+
+.time {
+  font-family: PingFangSC-Regular;
+  font-size: 22rpx;
+  color: #8cc8dc;
+  text-align: left;
+}
+
+.flight-detail {
+  margin-top: 26rpx;
+  margin-bottom: 26rpx;
+  margin-left: 70rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 22rpx;
+  color: #787878;
+  text-align: left;
+}
+
+.flight-number {
+  font-family: PingFangSC-Medium;
+  font-size: 22rpx;
+  color: #323232;
+  text-align: left;
+  margin-left: 5rpx;
+}
+
+.transfer {
+  opacity: 0.6;
+  background: #dcf0f0;
+  border-radius: 6rpx;
+  position: relative;
+}
+
+.dotted-line {
+  position: absolute;
+  border: 1px #8cc8dc dashed;
+  height: calc(100% + 60rpx);
+  left: 110.2rpx;
+  z-index: 10;
+  top: -30rpx;
+}
+
+.transfer {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.transfer-content {
+  padding: 20rpx;
+  margin-left: 118rpx;
+}
+
+.transfer-title {
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #323232;
+  text-align: left;
+}
+
+.transfer-des {
+  font-family: PingFangSC-Regular;
+  font-size: 22rpx;
+  color: #ff7846;
+  text-align: left;
+}
+
+
+
+
+
+.air-detail {
+  display: flex;
+  align-items: center;
+ 
+}
+.icon-enter{
+  margin-top: 8rpx;
+}
+.air-logo {
+  flex: 1;
+}
+
+.air-logo image {
+  width: 120rpx;
+  height: 52rpx;
+}
+
+.air-price {
+  flex-basis: 300rpx;
+  text-align: end;
+}
+
+.price-line {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.cash-back {
+  border: 1px solid #ff7846;
+  border-radius: 6rpx;
+  font-size: 24rpx;
+  padding: 0rpx 5rpx 0rpx 5rpx;
+  color: #ff7846;
+}
+.currency{
+  color: #464646;
+  font-size: 26rpx;
+  margin-left: 10rpx;
+}
+.price{
+  font-family: OpenSans-Semibold;
+  font-size: 40rpx;
+  color: #464646;
+  line-height: 40rpx;
+  margin-left: 5rpx;
+}
+.air-des{
+  font-family: PingFangSC-Regular;
+  font-size: 20rpx;
+  color: #787878;
+  margin-top: 15rpx;
+}
+.air-ranking{
+  border: 1px solid #BEBEBE;
+  border-radius: 3rpx;
+  font-size: 24rpx;
+  padding: 5rpx 10rpx 5rpx 10rpx;
+  color: #BEBEBE;
+}
+.air-footer{
+  margin-top:10rpx;
+  display: flex;
+  align-items: center;
+  font-size: 22rpx;
+  color: #787878;
+  font-family: PingFangSC-Regular;
+}
+.air-footer-left{
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.btn{
+  flex-basis: 120rpx;
+}
+button{
+   font-family: PingFangSC-Light;
+  background-image: linear-gradient(-90deg, rgba(255,133,50,0.99) 0%, #FF5200 100%);
+  border-radius: 10rpx;
+  font-size: 26rpx;
+   color: #FFFFFF;
+   padding-left:20rpx;
+  padding-right:20rpx;
+
+}

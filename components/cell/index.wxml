@@ -1,0 +1,17 @@
+  <view class="list list-{{mode}}" bindtap="onClick">
+    <image wx:if="{{src}}" class="list-image" src="{{src}}" mode="aspectFill"></image>
+    <component-icon wx:if="{{!src && icon}}" class="list-icon" size="38" type="{{icon}}" color="{{iconColor}}"></component-icon>
+    <view class="list-title">
+      <view class="list-title-main">{{title}}</view>
+      <view wx:if="{{detail}}" class="list-title-sub">{{detail}}</view>
+    </view>
+
+    <view wx:if="{{dot}}" style="background: {{dotColor}}" class="list-desc-dot"></view>
+
+    <slot wx:if="{{!desc}}" name="desc"></slot>
+    <view wx:if="tag" class='tag'>{{tag}}</view>
+    <view wx:if="{{desc}}" class="list-desc-text">{{desc}}</view>
+
+    <component-icon wx:if="{{arrow}}" class="list-desc-arrow" type="{{arrowIcon}}" size="{{arrowSize}}" color="#c2c2c2"></component-icon>
+    <slot wx:else name="extra"></slot>
+  </view>

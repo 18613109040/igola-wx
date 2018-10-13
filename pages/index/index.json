@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "component-carousel":"/components/carousel/index",
+    "component-tabs": "/components/tabs/index",
+    "component-icon": "/components/icon/index",
+    "component-popup": "/components/popup/index",
+    "component-calendar":"/components/calendar/index"
+  }
+}

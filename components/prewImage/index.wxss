@@ -1,0 +1,22 @@
+.prew-iamge{
+  width: 100%;
+  background: #fff;
+  padding: 20rpx;
+}
+.shop_card{
+   width: 100%;
+  display: flex;
+}
+.shop_card_item{
+   width: 150rpx;
+  margin-right: 25rpx;
+}
+.shop_item_image{
+  width: 150rpx;
+}
+.shop_item_image image{
+  width: 149rpx;
+  height: 149rpx;
+  border-radius: 1rpx;
+
+}

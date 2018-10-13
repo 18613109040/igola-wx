@@ -1,0 +1,73 @@
+<view>
+  <!-- <component-transition name="{{name}}" type="{{amType}}" custom-class="mask" > -->
+  <view class='date-picker-box'>
+    <!-- <view class='close-calendar' bindtap='close'>
+        <component-icon type='close' size="40" />
+      </view>
+      <view class='nav-title'>选择日期</view> -->
+    <!-- <view class='dpb-title'>
+      <view class='go' wx:if="{{begin}}">
+        <view class='title'>去程</view>
+        <view>{{begin.year}}年{{begin.month}}月{{begin.day}}日</view>
+      </view>
+      <view class='go' wx:else>
+        <view class='title'>去程</view>
+        <view>请选择时间</view>
+      </view>
+      <view class='back' wx:if="{{end}}">
+        <view class='title'>返程</view>
+        <view>{{end.year}}年{{end.month}}月{{end.day}}日</view>
+      </view>
+      <view class='back' wx:else>
+        <view class='title'>返程</view>
+        <view>请选择时间</view>
+      </view>
+    </view> -->
+
+    <view class='dpb-week'>
+      <view wx:for="{{week}}" wx:key="{{index}}" class="dpb-week-item {{(index===6||index===0)?'color-p':''}}">{{item}}</view>
+    </view>
+    <view class='dpb-week-days'>
+      <view class="dpbwd-table" wx:for="{{data}}" wx:key="{{index}}">
+        <view class='dpbwd-table-month'>
+          {{(month+index)>12?((year+1)+'年'+(month+index-12)+'月'):(year+'年'+(month+index)+'月')}}
+        </view>
+        <view class="dpbwd-table-items">
+          <view class="dpbwd-table-items-table">
+            <view wx:for="{{item}}" wx:for-index="inds" wx:key="{{inds}}" class="page-week" wx:for-item="week">
+              <view wx:if="{{isMulti}}" wx:for="{{week}}" wx:for-item="day" data-item="{{day}}" bindtap='clickCalendar' wx:for-index="idx" wx:key="{{idx}}" class="{{(day.time==begin||day.time==end)?'activte':(day.time>begin&&day.time<end)?'rang':''}} page-week-item">
+                <view class='page-table-note'>
+                  {{day.time==begin?beginText:day.time==end?endText:day.time==dateTime?'今天':day.note}}
+                </view>
+                <view wx:if="{{dateTime>day.time}}" class='disable page-table-text'>
+                  <text>{{day.day}}</text>
+                </view>
+                <view wx:else class="page-table-text {{(idx===6||idx===0)?'color-p':''}}">
+                  <text>{{day.day}}</text>
+                </view>
+                <view class='price' wx:if="{{day.price}}">
+                  <text>{{day.symbol}}{{day.price}}</text>
+                </view>
+              </view>
+              <view wx:if="{{!isMulti}}" wx:for="{{week}}" wx:for-item="day" data-item="{{day}}" bindtap='clickCalendar' wx:for-index="idx" wx:key="{{idx}}" class="{{day.time==begin?'activte':''}} page-week-item">
+                <view class='page-table-note'>
+                  {{day.time==begin?'出发':day.time==dateTime?'今天':day.note}}
+                </view>
+                <view wx:if="{{dateTime>day.time}}" class='disable page-table-text'>
+                  <text>{{day.day}}</text>
+                </view>
+                <view wx:else class="page-table-text {{(idx===6||idx===0)?'color-p':''}}">
+                  <text>{{day.day}}</text>
+                </view>
+                <view class='price' wx:if="{{day.price}}">
+                  <text>{{day.symbol}}{{day.price}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- </component-transition> -->
+</view>

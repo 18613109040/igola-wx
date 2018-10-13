@@ -1,0 +1,46 @@
+<view class='search-citys'>
+  <view class='search'>
+    <input value="{{cityName}}" placeholder="请输入城市/机场名或三字码" bindconfirm="searchAirPort" confirm-type="search"/>
+  </view>
+  <view class='empty-content' wx:if="{{airPort.data.length===0&&airPort.code===0}}">
+    <image class='empty-bg' src='../../images/sorry.png' style="width: 300rpx; height: 300rpx;"></image>
+    <view class=''>我们没有找到任何结果。</view>
+    <view class=''>请尝试修改您的搜索条件。</view>
+  </view>
+  <scroll-view wx:else class='search-content' scroll-y="{{true}}"  enable-back-to-top="{{true}}">
+    <view wx:for="{{airPort.data}}" wx:key="{{index}}">
+      <view class='city-line' bindtap='selectAirPort' data-item="{{item}}">
+        <view class='city' wx:if="{{item.t==='C'}}">城市</view>
+        <view class='city' wx:else>机场</view>
+        <view class='city-content'>
+          <view class='city-name'>
+            <view class='name'>{{item.d}}</view>
+            <view class='flight-name'>{{item.ds}}</view>
+          </view>
+          <view class='city-sub'>
+            <view>{{item.cy}}</view>
+            <view class='line'>
+              <component-icon type='vertical'size="28"/>
+            </view>
+            <view>{{item.cs}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='city-line'  bindtap='selectAirPort' data-item="{{children}}"  wx:if="{{item.s}}"   wx:for-item="children" wx:for="{{item.s}}"  wx:key="s{{index}}">
+        <view class='include'></view>
+        <view class='city-content'>
+          <view class='city-name'>
+            <view class='name'>{{children.d}}</view>
+          </view>
+          <view class='city-sub'>
+            <view>{{children.cy}}</view>
+            <view class='line'>
+              <component-icon type='vertical'size="28"/>
+            </view>
+            <view>{{children.c}}</view>
+          </view>
+        </view>
+      </view>
+    </view> 
+  </scroll-view>
+</view>

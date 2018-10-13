@@ -1,0 +1,78 @@
+@font-face {
+  font-family: 'iconfont';  /* project id 838930 */
+  src: url('//at.alicdn.com/t/font_838930_kosgpsvjwi.eot');
+  src: url('//at.alicdn.com/t/font_838930_kosgpsvjwi.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_838930_kosgpsvjwi.woff') format('woff'),
+  url('//at.alicdn.com/t/font_838930_kosgpsvjwi.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_838930_kosgpsvjwi.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-exchange::after{
+  content: '\e665';
+}
+.icon-arrow::after{
+  content: '\e64d';
+}
+.icon-dot::after{
+  content: '\e63f';
+}
+.icon-close::after{
+   content: '\e620';
+}
+.icon-add::after{
+  content: '\e74a';
+}
+.icon-dec::after{
+  content: '\e646';
+}
+.icon-position::after{
+  content: '\e611';
+}
+.icon-vertical::after{
+  content: '\e63a';
+}
+.icon-down::after{
+  content: '\e654';
+}
+.icon-collected::after{
+  content: '\e643';
+  color: rgb(250, 200, 50);
+}
+.icon-collection::after{
+  content: '\e642';
+  color: #D3D2D2;
+}
+.icon-good::after{
+  content: '\e627';
+  color: #FF7846;
+}
+.icon-general::after{
+  content: '\e782';
+  color: #FF7846;
+}
+.icon-bad::after{
+  content: '\e640';
+  color: #787878;
+}
+.icon-sort::after{
+  content: '\e684';
+}
+.icon-transfer::after{
+  content: '\e60c';
+}
+.icon-filter::after{
+   content: '\e60d';
+}
+.icon-change::after{
+  content: '\e628';
+  color: rgb(0, 190, 220);
+}
+.icon-radio::after{
+  content: '\e614';
+}

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "比价和预定",
+  "usingComponents": {
+    "component-tabs": "/components/tabs/index",
+    "component-list": "/components/list/index",
+    "component-icon": "/components/icon/index"
+  }
+}

@@ -1,0 +1,6 @@
+<view 
+  class="iconfont {{ type ? 'icon-' + type : '' }}" 
+  style="font-size: {{ size }}rpx; {{ color ? 'color: ' + color : '' }}"
+  bind:tap="onClick"
+>
+</view>

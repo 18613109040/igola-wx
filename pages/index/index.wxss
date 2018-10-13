@@ -1,0 +1,179 @@
+.container{
+  width: 100%;
+}
+.flight-tabs{
+  width: 80%;
+  margin: 0px auto;
+  margin-bottom: 40rpx;
+}
+.list-content{
+  padding: 20rpx 40rpx 0rpx 40rpx;
+}
+.flight-city{
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0rpx 20rpx 0rpx;
+  border-bottom: 1px solid #ececec;
+}
+.departure{
+  flex: 1;
+  text-align: left;
+}
+.exchange{
+  width:100rpx;
+  text-align: center;
+}
+.placehold{
+  color: rgba(190, 190, 190, 1);
+  font-size: 34rpx;
+}
+.destination{
+  flex: 1;
+  text-align: right;
+}
+button{
+  color: #fff;
+  background-image: linear-gradient(to right, #28c8dc, #3296d2);
+  background-color: #00BEDC;
+  box-shadow: 0rpx 10rpx 20rpx rgba(20, 130, 220, 0.3);
+}
+.btn{
+  margin-top: 80rpx;
+}
+.tip{
+  margin-top: 40rpx;
+  width: 100%;
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9b9b9b;
+  font-family: BlinkMacSystemFont, 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.switch-currency{
+  color: #00BEDC;
+  margin-left: 18rpx;
+}
+.sub-horizontal{
+  margin-left: 10rpx;
+  margin-top:0rpx ;
+}
+.list-title-sub {
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #9B9B9B;
+}
+
+.bottom {
+  width: 100%;
+  padding: 20rpx;
+  background-color: #fff;
+}
+.list-calender{
+  display: flex;
+  padding: 20rpx 0rpx 20rpx 0rpx;
+  align-items: center;
+  border-bottom-color: #dcdcdc;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  min-height: 120rpx;
+  border-bottom: 1px solid #ececec;
+  font-size: 36rpx;
+  color: #333;
+  box-sizing: border-box;
+}
+.list-calender .left{
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+}
+.list-calender .right{
+  display: flex;
+  align-items: flex-end;
+}
+.list-calender .sub-horizontal{
+  color: #9B9B9B;
+  font-size: 24rpx;
+}
+.list-cabin{
+  display: flex;
+  align-items: center;
+  border-bottom-color: #dcdcdc;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  min-height: 120rpx;
+  padding: 20rpx 0rpx 20rpx 0rpx;
+  border-bottom: 1px solid #ececec;
+  font-size: 36rpx;
+  color: #333;
+  box-sizing: border-box;
+  line-height: 1.4;
+}
+.list-cabin  .left{
+  flex: 1;
+}
+.list-cabin .right{
+  flex: 1;
+  text-align: end;
+}
+.action-sheet-header{
+  display: flex;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+.action-sheet-header .title{
+  flex:1;
+  color: #9B9B9B;
+  font-size: 26rpx;
+}
+.action-sheet-list{
+  display: flex;
+  align-items: center;
+  margin-top: 60rpx;
+}
+.action-sheet-list-left{
+  flex:1;
+  display: flex;
+  align-items: center;
+}
+.action-sheet-title{
+      color: #323232;
+      font-size: 32rpx;
+}
+.action-sheet-sub{
+  color: #787878;
+  font-size: 28rpx;
+  margin-left: 10rpx;
+}
+.action-sheet-list-right{
+  flex-basis: 200rpx;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.action-sheet-list-dec-hid{
+  flex: 1;
+  color: rgb(240, 240, 240);
+}
+.action-sheet-list-dec{
+  flex: 1;
+  color: rgb(0, 190, 220);
+}
+.action-sheet-list-num{
+  flex: 1;
+}
+.action-sheet-list-add{
+  flex: 1;
+  color: rgb(0, 190, 220);
+}
+.personnel-popup-content{
+  padding: 20rpx;
+}
+
+.add-flight{
+   color: rgb(0, 190, 220);
+   text-align: center;
+   margin-top: 40rpx;
+}

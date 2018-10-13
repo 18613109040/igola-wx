@@ -1,0 +1,13 @@
+<view class='tabs'>
+  <view class="tabs-bar-content">
+    <view 
+      wx:for="{{tabs}}" 
+      bindtap='onTap' 
+      wx:key="index"
+      data-index='{{index}}' 
+      class="tabs-item {{active===index?'tabs-item-active':''}}">
+      <text>{{item.title}}</text>
+    </view>
+  </view>
+  <view class='tabs-item-bar-underline'  style='left:{{(100/tabs.length)*active + (100/tabs.length)/2}}%'></view>
+</view>

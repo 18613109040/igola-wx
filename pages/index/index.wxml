@@ -1,0 +1,131 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 轮播图 -->
+  <component-carousel swiperList="{{flightsHome.banner}}" bind:carouselClick="carouselClick"/>
+  <!-- tabs -->
+  <view class='flight-tabs'>
+    <component-tabs tabs="{{flightsHome.tabs}}" active="{{flightsHome.selectIndex}}" bind:tabsclick="onTabsClick" />
+  </view>
+  <view class='list-content'>
+    <view wx:for="{{flightsHome.strokes}}" wx:key="{{index}}">
+      <view class='flight-city'>
+        <view wx:if="{{item.departure.d===''}}" class='departure placehold' bindtap='clickCity' data-index="{{index}}" data-type="departure">
+          <text>出发城市</text>
+        </view>
+        <view class='departure' wx:else bindtap='clickCity' data-type="departure" data-index="{{index}}" >
+          <text>{{item.departure.d}}</text>
+        </view>
+        <view class='exchange' bindtap='exchangeCity' data-index="{{index}}">
+          <component-icon type='exchange' />
+        </view>
+        <view wx:if="{{item.destination.d===''}}" class='destination placehold' bindtap='clickCity' data-index="{{index}}" data-type="destination" >
+          <text>到达城市</text>
+        </view>
+        <view wx:else class='destination' bindtap='clickCity' data-index="{{index}}" data-type="destination">
+          <text>{{item.destination.d}}</text>
+        </view>
+      </view>
+      <view class='list-calender' bindtap='listCalenderClick' data-index='{{index}}'>
+        <view class='left'>
+            <view class="list-title-main">{{item.departureTime.date}}</view>
+            <view class="sub-horizontal">{{item.departureTime.week}} </view>
+        </view>
+        <view class='right' wx:if="{{flightsHome.selectIndex===1}}">
+            <view class="list-title-main">{{item.destinationTime.date}}</view>
+            <view class="sub-horizontal">{{item.destinationTime.week}} </view>
+        </view>
+        <view wx:else catchtap='deleteFlight'>
+          <component-icon
+            type="{{index==2?'dec':'arrow'}}"
+            size="{{index==2?'40':'32'}}"
+            color="{{index==2?'rgb(255, 120, 70)':''}}"
+          />
+        </view>
+      </view>
+    </view>
+    <view class='list-cabin'>
+      <view class="left">
+          <picker value="{{index}}" bindchange="pickerCabin" range="{{flightsHome.cabinOptions}}" range-key="name">
+            <view class="picker">
+              {{flightsHome.cabin.name}}
+            </view>
+          </picker>
+        </view>
+      <view class='right' bindtap='showPersonnelPop'>
+        成人{{flightsHome.personnel.adult}}，儿童 {{flightsHome.personnel.child}}
+      </view>
+    </view>
+    <view class='add-flight' bindtap='addFlight' wx:if="{{flightsHome.selectIndex==2&&flightsHome.strokes.length<3}}">
+      <component-icon type="add" />
+    </view>
+    <view class='btn'>
+      <button hover-class="other-button-hover" bindtap='searh'> 搜索机票 </button>
+    </view>
+    <view class='tip'>
+      <view>
+        <text>单前货币：人民币 CNY</text>
+      </view>
+      <view class='switch-currency'>
+        <text>切换</text>
+      </view>
+    </view>
+  </view>
+  <!-- 成人 儿童 -->
+  <component-popup 
+  show="{{ showPersonnel }}"  
+  position="bottom" 
+  custom-class="bottom" 
+  overlay="{{ true }}">
+    <view class='personnel-popup-content'>
+      <view  class="action-sheet-header">
+        <view class="title">选择旅客数</view>
+        <component-icon type="close" bind:iconclick="enter" />
+      </view>
+      <view class="action-sheet-list">
+        <view class="action-sheet-list-left">
+          <view class='action-sheet-title'>成人</view>
+          <view class='action-sheet-sub'>(12周岁以上)</view>
+        </view>
+        <view class="action-sheet-list-right">
+          <view wx:if="{{flightsHome.personnel.adult==0}}" class='action-sheet-list-dec-hid'>
+            <component-icon type="dec" />
+          </view>
+          <view wx:else class='action-sheet-list-dec' bindtap='clickPerson' data-type='adult' data-action='dec'>
+            <component-icon type="dec" />
+          </view>
+          <view class='action-sheet-list-num'>{{flightsHome.personnel.adult}}</view>
+          <view wx:if="{{flightsHome.personnel.adult>=9}}" class='action-sheet-list-dec-hid'>
+            <component-icon type="add" />
+          </view>
+          <view wx:else class='action-sheet-list-add' bindtap='clickPerson' data-type='adult' data-action='add'>
+            <component-icon type="add"  />
+          </view>
+        </view>
+      </view>
+      <view class="action-sheet-list">
+        <view class="action-sheet-list-left">
+          <view class='action-sheet-title'>儿童</view>
+          <view class='action-sheet-sub'>(2-12周岁)</view>
+        </view>
+        <view class="action-sheet-list-right">
+          <view wx:if="{{flightsHome.personnel.child==0}}" class='action-sheet-list-dec-hid'>
+            <component-icon type="dec" />
+          </view>
+          <view wx:else class='action-sheet-list-dec' bindtap='clickPerson' data-type='child' data-action='dec'>
+            <component-icon type="dec"  />
+          </view>
+          <view class='action-sheet-list-num'>{{flightsHome.personnel.child}}</view>
+          <view wx:if="{{flightsHome.personnel.child>=childMax}}" class='action-sheet-list-dec-hid'>
+            <component-icon type="add" />
+          </view>
+          <view wx:else class='action-sheet-list-add' bindtap='clickPerson' data-type='child' data-action='add'>
+            <component-icon type="add" />
+          </view>
+        </view>
+      </view>
+      <view class='btn'>
+        <button hover-class="other-button-hover" bindtap='enter'> 确认 </button>
+      </view>
+    </view>
+  </component-popup>
+</view>

@@ -1,0 +1,17 @@
+<template name="filterTime">
+  <view>
+    <component-cell title="不限" tag="{{symbol}}" desc="{{blockBudgetAirLowest}}" arrowIcon="change" arrow="{{true}}" arrowSize="{{40}}"></component-cell>
+    <view class='arr-time-text'>
+      <text>起飞时间</text>
+    </view>
+    <view wx:for="{{arrTimeInfo}}" wx:key="{{index}}">
+      <component-cell title="{{item.timeValue}}" tag="{{item.lowestPrice?timeline.symbol:''}}" desc="{{item.lowestPrice?item.lowestPrice:'暂无航班'}}" mode="{{arrTimeInfo.length-1===index?'':'none'}}" arrowIcon="change" arrow="{{true}}" arrowSize="{{40}}"></component-cell>
+    </view>
+    <view class='arr-time-text'>
+      <text>到达时间</text>
+    </view>
+    <view wx:for="{{depTimeInfo}}" wx:key="{{index}}">
+      <component-cell title="{{item.timeValue}}" tag="{{item.lowestPrice?timeline.symbol:''}}" desc="{{item.lowestPrice?item.lowestPrice:'暂无航班'}}" mode="none" arrowIcon="change" arrow="{{true}}" arrowSize="{{40}}"></component-cell>
+    </view>
+  </view>
+</template>

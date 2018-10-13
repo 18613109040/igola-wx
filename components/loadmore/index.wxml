@@ -1,0 +1,15 @@
+<view class="loadmore" >
+  <block wx:if="{{isEnd}}">
+    <view class="line"></view>
+    <image wx:if="{{image!=''}}" class="icon" src="{{ image }}" mode="aspectFill"></image>
+    <component-icon wx:if="{{icon!==''}}" type='{{icon}}'/>
+    <text class="text">{{ text || type.text }}</text>
+    <view class="line"></view>
+  </block>
+  <view wx:else class="wrap">
+    <image wx:if="{{image!=''}}" class="icon" src="{{ image }}" mode="aspectFill"></image>
+    <component-icon wx:elif="{{icon!=''}}" type='{{icon}}'/>
+    <view wx:else class="loading-icon"></view>
+    <text class="loading-text">{{ text || '加载中...' }}</text>
+  </view>
+</view>

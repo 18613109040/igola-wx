@@ -1,0 +1,6 @@
+<component-transition
+  show="{{ show }}"
+  custom-class="mask"
+  custom-style="z-index: {{ zIndex }}; {{ mask ? 'background-color: rgba(0, 0, 0, .7);' : '' }}; {{ customStyle }}"
+  bind:tap="onClick"
+/>

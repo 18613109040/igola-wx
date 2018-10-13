@@ -1,0 +1,199 @@
+<view class='time-line'>
+  <view class='header'>
+    <view class='top-header'>
+      <view class='before' wx:if="{{flightsHome.selectIndex!==1&&currentTime<flightsHome.strokes[0].departureTime.begin}}" bindtap='before'>
+        <text>前一天</text>
+      </view>
+      <view class='not-before' wx:if="{{flightsHome.selectIndex!==1&&currentTime>flightsHome.strokes[0].departureTime.begin}}">
+        <text>前一天</text>
+      </view>
+      <view class='center' bindtap='changeTime'>
+        <view class='start-time'>
+          <text>{{flightsHome.strokes[0].departureTime.date}}</text>
+        </view>
+        <view class='divider-with-text' wx:if="{{flightsHome.selectIndex==1}}">
+          <text class='divider-inner-text'>{{days}}天</text>
+        </view>
+        <view class='end-time' wx:if="{{flightsHome.selectIndex==1}}">
+          <text>{{flightsHome.strokes[0].destinationTime.date}}</text>
+        </view>
+        <view>
+          <component-icon type='down' color='#464646' />
+        </view>
+      </view>
+      <view class='after' wx:if="{{flightsHome.selectIndex!==1}}" bindtap='next'>
+        <text>后一天</text>
+      </view>
+    </view>
+  </view>
+  <scroll-view scroll-y class='content-wrap' bindscrolltolower="bindScrollToLower">
+    <view class='inner-wrapper' bindtap='toCabinList' wx:for="{{flightList}}" wx:key="{{index}}">
+      <view class='main-cell'>
+        <view class='od-cell'>
+          <view class='stop'>
+            <view class='time'>
+              <text>{{item.departDate}}</text>
+            </view>
+            <view class='airline-text'>
+              <text>{{item.ariname[0]}}</text>
+            </view>
+          </view>
+          <view class='mid'>
+            <view class='mid-label'>
+              <text wx:if="{{item.overnightComment}}">{{item.overnightComment}}</text>
+              <text wx:else></text>
+            </view>
+            <view class='divider-mid-text'>
+              <text class='divider-mid-inner-text'>转</text>
+            </view>
+            <view class='mid-city-lable'>
+              <text wx:if="{{item.stops === 1}}">{{item.transferCities[0]}}</text>
+              <text wx:elif="{{item.stops > 1}}">中转{{item.stops}}次</text>
+              <text wx:else></text>
+            </view>
+          </view>
+          <view class='stop'>
+            <view class='time'>
+              <text>{{item.arriveDate}}</text>
+            </view>
+            <view class='airline-text'>
+              <text>{{item.ariname[1]}}</text>
+            </view>
+            <view class='days'>
+              <text>{{item.crossDay}}</text>
+            </view>
+          </view>
+        </view>
+        <view class='benefit-cell'>
+          <view class='price-cell'>
+            <view class='tag-item' wx:if="{{item.originCabinInfo.cashback>0}}">
+              <text>{{item.originCabinInfo.cashback}}</text>
+            </view>
+            <view>
+              <text class='unit '>{{timeline.symbol}}</text>
+              <text class='price'>{{item.originCabinInfo.price}}</text>
+            </view>
+          </view>
+          <view class='price-label'>
+            <text>含税</text>
+          </view>
+        </view>
+      </view>
+      <view class='sub-cell'>
+        <view class='air-info'>
+          <view>
+            <text wx:if="{{item.durationTime[0]!=='00'}}">{{item.durationTime[0]}}h</text>
+            <text wx:if="{{item.durationTime[1]!=='00'}}">{{item.durationTime[1]}}m | </text>
+          </view>
+          <view class='ari-image' wx:for="{{item.airImage}}" wx:for-index="idx" wx:for-item="airlineimage" wx:key="{{idx}}">
+            <image src='{{airlineimage}}'></image>
+          </view>
+          <view class='ari-image' wx:for="{{item.airlineNames}}" wx:for-index="airlineNameIndex" wx:for-item="airlineName" wx:key="{{airlineNameIndex}}">
+            <text wx:if="{{airlineNameIndex==0||airlineNameIndex===item.airlineNames.length}}">{{airlineName}}</text>
+            <text wx:else>/ {{airlineName}}</text>
+          </view>
+        </view>
+        <view class='activity-cell'>
+          <component-icon type='collected' size="36" color='#464646' wx:if="{{item.originCabinInfo.favor}}" />
+          <component-icon type='collection' size="36" color='#464646' wx:else/>
+        </view>
+      </view>
+      <view class='evaluation'>
+        <view class='satisfaction'>
+          <component-icon type='good' size="30" wx:if="{{item.score>=7}}" />
+          <component-icon type='general' size="30" wx:elif="{{item.score>=4&&item.score<7}}" />
+          <component-icon type='bad' size="30" wx:else/>
+          <view>
+            <text class='fraction'>{{item.score}}</text>
+          </view>
+        </view>
+        <view class='source'>
+          <text>最低价来自</text>
+          <text class='airline'>{{item.cheapestPrices[0].from}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='load-more-bottom'>
+      <component-loadmore text="{{timeline.loadMore?'正在努力加载中...':'到底了'}}" wx:if="{{showLoadMore || !timeline.loadMore}}" isEnd="{{!timeline.loadMore}}" />
+    </view>
+  </scroll-view>
+
+  <view class='footer'>
+    <view class='sort'>
+      <picker value="{{index}}" bindchange="pickerSorter" range="{{flightsHome.sortresOptions}}" range-key="name">
+        <view>
+          <component-icon type='sort' size="40" />
+        </view>
+        <view>
+          <text>{{flightsHome.sortresOptions[flightsHome.sorterIndex].name}}</text>
+        </view>
+      </picker>
+    </view>
+    <view class='transfer'>
+      <picker value="{{index}}" bindchange="pickerVoyage" range="{{flightsHome.voyageOptions}}" range-key="name">
+        <view>
+          <component-icon type='transfer' size="40" />
+        </view>
+        <view>
+          <text>{{flightsHome.voyageOptions[flightsHome.voyageIndex].name}}</text>
+        </view>
+      </picker>
+    </view>
+    <view class='filter' bindtap='filterShow'>
+      <view>
+        <component-icon type='filter' size="40" />
+      </view>
+      <view>
+        <text>筛选</text>
+      </view>
+    </view>
+  </view>
+  <component-popup show="{{ showFilter }}" position="bottom" custom-class="bottom" overlay="{{ true }}">
+    <view class='filter-popup'>
+      <view class='filter-popup-header'>
+        <view class='header-close' bindtap='colosePopup'>
+          <component-icon type='close' />
+        </view>
+        <view class='header-empty'>
+          <text>清除</text>
+        </view>
+      </view>
+      <view class='filter-popup-content'>
+        <view class='fliter-left'>
+          <view class="{{timeline.filterSelectIndex===index?'item action':'item'}}" wx:for="{{timeline.filterMenu}}" wx:key="{{index}}" data-index="{{index}}" bindtap='filterMenuClick'>
+            <text>{{item}}</text>
+          </view>
+        </view>
+        <scroll-view class='filter-right' scroll-y>
+          <!-- <import src="../../template/timeline/filter-time.wxml"/>
+          <template is="filterTime" wx:if="{{flightList.length>0}}" data="{{symbol:timeline.symbol,blockBudgetAirLowest,depTimeInfo,arrTimeInfo}}" /> -->
+          <component-cell title="不限" tag="{{timeline.symbol}}" desc="{{blockBudgetAirLowest}}" arrowIcon="change" arrow="{{true}}" arrowSize="{{40}}"></component-cell>
+          <view wx:if="{{timeline.filterSelectIndex===0}}">
+            <view class='arr-time-text'>
+              <text>起飞时间</text>
+            </view>
+            <view wx:for="{{arrTimeInfo}}" wx:key="{{index}}">
+              <component-cell title="{{item.timeValue}}" tag="{{item.lowestPrice?timeline.symbol:''}}" desc="{{item.lowestPrice?item.lowestPrice:'暂无航班'}}" mode="{{arrTimeInfo.length-1===index?'':'none'}}" arrowIcon="change" arrow="{{true}}" arrowSize="{{40}}"></component-cell>
+            </view>
+            <view class='arr-time-text'>
+              <text>到达时间</text>
+            </view>
+            <view wx:for="{{depTimeInfo}}" wx:key="{{index}}">
+              <component-cell title="{{item.timeValue}}" tag="{{item.lowestPrice?timeline.symbol:''}}" desc="{{item.lowestPrice?item.lowestPrice:'暂无航班'}}" mode="none" arrowIcon="change" arrow="{{true}}" arrowSize="{{40}}"></component-cell>
+            </view>
+          </view>
+          <view wx:if="{{timeline.filterSelectIndex===1}}" class="scroll-alliance-box">
+            <scroll-view  scroll-x class="scroll-view_x" style="width:500rpx;height:90rpx">
+                <view wx:for="{{allianceInfo}}" wx:key="index" class='alliance-name'>
+                  <text>{{item.allianceName}}</text>
+                </view>
+            </scroll-view>
+          </view>
+        </scroll-view>
+      </view>
+      <view class='btn'>
+        <button hover-class="other-button-hover" bindtap='enter'> 确认 </button>
+      </view>
+    </view>
+  </component-popup>
+</view>

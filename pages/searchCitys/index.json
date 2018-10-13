@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "城市搜索",
+  "usingComponents": {
+    "component-icon": "/components/icon/index"
+  }
+}

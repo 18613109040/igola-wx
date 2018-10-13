@@ -1,0 +1,75 @@
+.flight-citys{
+ 
+}
+.history{
+  margin-top:40rpx;
+}
+.flight-citys .container-city{
+  position: relative;
+  margin-top: 270rpx;
+  z-index: 8;
+  padding: 0rpx 20rpx 0rpx 20rpx;
+}
+.city-header{
+  position: fixed;
+  top: 0rpx;
+  width: 100%;
+  padding: 20rpx;
+  z-index: 10;
+ 
+}
+
+.hot{
+  margin-top:40rpx;
+}
+.flight-citys .title{
+  font-size: 24rpx;
+  color: #9B9B9B;
+ 
+}
+.flight-citys .search{
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20rpx;
+  font-size: 50rpx;
+  color: #9B9B9B;
+}
+.flight-citys .search input{
+  height: 2.4rem;
+}
+.position-city{
+  margin: 10rpx 20rpx 10rpx 0rpx ;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  width: 213rpx;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10rpx;
+  border: 1px solid rgba(212, 213, 214, 0.3);
+  box-shadow: 0rpx 10rpx 20rpx rgba(154, 156, 158, 0.3);
+}
+.hot-citys{
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap;
+}
+.history-city{
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap;
+}
+.flight-citys .city{
+  font-size: 28rpx;
+  width: 213rpx;
+  margin: 10rpx 20rpx 10rpx 0rpx ;
+  text-align: center;
+  border-radius: 10rpx;
+  border: 1px solid rgba(212, 213, 214, 0.3);
+  box-shadow: 0rpx 10rpx 20rpx rgba(154, 156, 158, 0.3);
+}
+.city-name{
+  padding: 20rpx 0rpx 20rpx 0rpx;
+  display: block;
+}

@@ -1,0 +1,11 @@
+  <view class='prew-iamge'>
+    <scroll-view scroll-x>
+      <view class='shop_card'>
+        <view class='shop_card_item' wx:for="{{imageList}}" wx:if="{{item}}" wx:key="{{index}}" bindtap='lookImage' data-index="{{index}}">
+            <view class='shop_item_image'>
+              <image src='{{item}}'></image>
+            </view>
+          </view>
+      </view>
+    </scroll-view>
+  </view>

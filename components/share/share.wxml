@@ -1,0 +1,16 @@
+<!--index.wxml-->
+
+<view animation="{{animationData}}" bindtap="hideModal" class=" hid_box" wx:if="{{showModalStatus}}">
+  <view class='btn_btm'>
+      <view class='btn_box'>
+        <view class='son_box'>
+          <image class='btn_img'></image>
+          <text class='btn_txt' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1522391787423&di=10e9ebf5f6990cf4d0e47cef82682180&imgtype=0&src=http%3A%2F%2Fis5.mzstatic.com%2Fimage%2Fthumb%2FPurple71%2Fv4%2Fc5%2F99%2F19%2Fc59919ab-403a-6f56-6ffb-02f91970ad7d%2Fsource.icns%2F512x512bb.png'>微信好友</text>
+        </view>
+        <view class='son_box'>
+          <image class='btn_img' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1522391857436&di=c7f04bb328a0d027a5ef52c47554a3e4&imgtype=0&src=http%3A%2F%2Fwww.xitongzhijia.net%2Fuploads%2Fallimg%2F160527%2F1043102b4-0.jpg'></image>
+          <text class='btn_txt'>朋友圈</text>
+        </view>
+    </view>
+  </view>
+</view>
